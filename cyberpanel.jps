@@ -1,5 +1,4 @@
-jpsType: install
-jpsVersion: '1'
+Type: install
 id: cyberpanel
 name: Cyberpanel
 categories:
