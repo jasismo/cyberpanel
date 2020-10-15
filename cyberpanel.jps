@@ -20,7 +20,7 @@ onInstall:
   - cmd[centos-vps]: sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh) <<< $'1\n1\nn\ny\ny\ny\n'
   
 success: |
-  Below you will find your admin panel link, username and password.  
-  Admin panel URL: [${env.protocol}://${env.domain}/](${env.protocol}://${env.domain}/)  
+ Below you will find your admin panel link, username and password.  
+  Admin panel URL: [${nodes.centos-vps.extIPs}:8090) 
   Admin name: admin  
-  Password: 1234567
+  Password: 1234567 
