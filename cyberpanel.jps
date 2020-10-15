@@ -7,16 +7,18 @@ logo: https://hostbillapp.com/appstore/hosting_cyberpanel/images/thumbnails/m_lo
 homepage: https://cyberpanel.net/
 description: CyberPanel is a next generation hosting control panel powered by OpenLiteSpeed. Built for speed, security, and reliability
 
-ip: true
+
 nodes:
   - nodeType: centos-vps
+    extip: true
     count: 1
     cloudlets: 16
     env:
       SERVER_WEBROOT: /var/www/webroot
   
-onInstall:
-    - cmd[vps]: sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh) <<< $'1\n1\nn\ny\ny\ny\n'
+onInstall: 
+  - cmd[vps]: sh <(curl https://cyberpanel.net/install.sh || wget -O - https://cyberpanel.net/install.sh) 
+  - <<< $'1\n1\nn\ny\ny\ny\n'
 success: |
   Below you will find your admin panel link, username and password.  
   Admin panel URL: [${env.protocol}://${env.domain}/](${env.protocol}://${env.domain}/)  
